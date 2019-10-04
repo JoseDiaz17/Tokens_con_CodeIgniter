@@ -68,7 +68,7 @@
                 Nombre: 'Api-Vue JS ',
                 titulo: '',
                 id: '',
-                Editar: false
+                Editar: false 
             },
             mounted() {
                 this.Get_Generos()
