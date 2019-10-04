@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+define('URL', 'http://localhost/Tokens_con_CodeIgniter');
+
 $config['base_url'] = 'http://localhost/Tokens_con_CodeIgniter';
 
 $config['index_page'] = '';

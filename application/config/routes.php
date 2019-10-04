@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$route['default_controller'] = 'Inicio';
+$route['default_controller'] = 'tareas/index';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = true;
 $route['api/example/users/(:num)'] = 'api/example/users/id/$1'; // Example 4

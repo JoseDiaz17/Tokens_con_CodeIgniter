@@ -13,7 +13,6 @@ class Genero extends REST_Controller
         header("Access-Control-Allow-Origin: *");//permite el acceso a los recursos
         header("Access-Control-Allow-Headers: X-API-KEY, ORIGIN, X-Requested-With, Content, DELETE");//contenidos aceptados
         header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");//permite diversos métodos de conexión
-        header('content-type: application/json; charset=utf-8');
         header('Authorization');
     }
 
@@ -51,19 +50,16 @@ class Genero extends REST_Controller
         $this->response($data, REST_Controller::HTTP_CREATED);
     }
 
-    public function index_put($id = null)
+    public function index_put()
     {
-        //Validar que el id exista
-        if (empty($id)) {
-            $this->response(["No puedes mandar el id vacio!"], REST_Controller::HTTP_NOT_FOUND);
-            return;
-        }
+        $id=$this->put('id');
+        $titulo=$this->put('titulo');
         //Validar que los campos no vallan vacios
-        if (empty($this->put('titulo'))) {
+        if (empty($titulo)) {
             $this->response(["No puedes mandar los campos vacios!"], REST_Controller::HTTP_NOT_FOUND);
             return;
         }
-        $data = ['titulo' => $this->put('titulo')];
+        $data = ['id' =>$id,'titulo' =>$titulo];
         $this->db->update('genero', $data, array('id' => $id));
         $this->response("Registro actualizado", REST_Controller::HTTP_OK);
     }

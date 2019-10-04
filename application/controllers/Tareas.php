@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Inicio extends CI_Controller
+class Tareas extends CI_Controller
 {
 	//Metodo Constructor
 	public function __construct()
@@ -11,7 +11,6 @@ class Inicio extends CI_Controller
 
 	public function index()
 	{
-		$titulo["titulo"]="Bienvenidos al controlador Usuarios";
-		$this->load->view('Inicio');
+		$this->load->view('tareas/index');
 	}
 }
